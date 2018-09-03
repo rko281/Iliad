@@ -28,7 +28,7 @@ package setPrerequisites: (IdentitySet new
 	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
 	add: '..\Grease\Grease-Core';
 	add: 'Iliad-Core';
-	add: '..\Sport\Sport';
+	add: '..\Swazoo\Sport';
 	add: '..\Swazoo\Swazoo';
 	yourself).
 
