@@ -1,0 +1,61 @@
+﻿| package |
+package := Package name: 'Iliad-More-CometExample'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILCometCounter;
+	add: #ILCometCounterApplication;
+	add: #ILCometCounterChangedEvent;
+	add: #ILCometCounterModel;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: 'Iliad-Core';
+	add: 'Iliad-More-Comet';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+ILWidget subclass: #ILCometCounter
+	instanceVariableNames: 'counter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILCometCounterModel
+	instanceVariableNames: 'count'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'instance'!
+ILApplication subclass: #ILCometCounterApplication
+	instanceVariableNames: 'counter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCometEvent subclass: #ILCometCounterChangedEvent
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+

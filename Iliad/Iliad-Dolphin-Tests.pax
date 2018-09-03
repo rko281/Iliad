@@ -1,0 +1,44 @@
+﻿| package |
+package := Package name: 'Iliad-Dolphin-Tests'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package methodNames
+	add: 'ILElementTest class' -> #shouldInheritSelectors;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: 'Iliad-Tests';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!ILElementTest class methodsFor!
+
+shouldInheritSelectors
+
+	^false! !
+!ILElementTest class categoriesFor: #shouldInheritSelectors!public! !
+
+"End of package definition"!
+

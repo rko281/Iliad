@@ -1,0 +1,51 @@
+﻿| package |
+package := Package name: 'Iliad-Dolphin-Install'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad
+
+"Start the example server"
+ILSite newDefault.
+SwazooServer singleton stop; start.
+ShellLibrary default shellOpen: ''http://localhost:8080/browse'''.
+
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: 'Iliad-Dolphin-Core';
+	add: 'Iliad-Dolphin-Tests';
+	add: 'Iliad-More-CometExample';
+	add: 'Iliad-More-Examples';
+	add: 'Iliad-More-HTML5Elements';
+	add: 'Iliad-Swazoo';
+	yourself).
+
+package setManualPrerequisites: #(
+	'Iliad-Dolphin-Core'
+	'Iliad-Dolphin-Tests'
+	'Iliad-More-CometExample'
+	'Iliad-More-Examples'
+	'Iliad-More-HTML5Elements'
+	'Iliad-Swazoo').
+
+package!
+
+"Class Definitions"!
+
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+

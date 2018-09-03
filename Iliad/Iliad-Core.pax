@@ -1,0 +1,834 @@
+﻿| package |
+package := Package name: 'Iliad-Core'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILAction;
+	add: #ILActionRegistry;
+	add: #ILAnchorElement;
+	add: #ILAnswerHandler;
+	add: #ILAppendDelegator;
+	add: #ILApplication;
+	add: #ILApplicationHandler;
+	add: #ILAreaElement;
+	add: #ILAttributeError;
+	add: #ILAttributeNotUnderstood;
+	add: #ILBodyElement;
+	add: #ILBreakElement;
+	add: #ILBuildable;
+	add: #ILButtonElement;
+	add: #ILCaptionElement;
+	add: #ILCheckboxElement;
+	add: #ILClosingElement;
+	add: #ILComposite;
+	add: #ILConditionalCommentElement;
+	add: #ILConfirmationWidget;
+	add: #ILContext;
+	add: #ILCookie;
+	add: #ILCurrentBuildable;
+	add: #ILCurrentContext;
+	add: #ILDecorator;
+	add: #ILDelegator;
+	add: #ILDirectionElement;
+	add: #ILDirectory;
+	add: #ILDispatcher;
+	add: #ILDispatchError;
+	add: #ILDivElement;
+	add: #ILDynamicVariable;
+	add: #ILElement;
+	add: #ILElementError;
+	add: #ILEncoder;
+	add: #ILErrorHandler;
+	add: #ILFieldsetElement;
+	add: #ILFileDirectory;
+	add: #ILFileHandler;
+	add: #ILFileProxy;
+	add: #ILFormElement;
+	add: #ILFormElementElement;
+	add: #ILHeadElement;
+	add: #ILHeadingElement;
+	add: #ILHorizontalRuleElement;
+	add: #ILHTMLBuilderElement;
+	add: #ILHtmlElement;
+	add: #ILHTMLPage;
+	add: #ILImageElement;
+	add: #ILImagesDirectory;
+	add: #ILInformationWidget;
+	add: #ILInPlaceWidget;
+	add: #ILInputElement;
+	add: #ILJavascriptsDirectory;
+	add: #ILJson;
+	add: #ILJsonHandler;
+	add: #ILJsonObject;
+	add: #ILJsonSyntaxError;
+	add: #ILLabelElement;
+	add: #ILLegendElement;
+	add: #ILLinkableElement;
+	add: #ILLinkElement;
+	add: #ILListElement;
+	add: #ILListItemElement;
+	add: #ILMapElement;
+	add: #ILMemoryDirectory;
+	add: #ILMetaElement;
+	add: #ILModelProxy;
+	add: #ILNotFoundHandler;
+	add: #ILObject;
+	add: #ILObjectElement;
+	add: #ILOptionElement;
+	add: #ILOptionGroupElement;
+	add: #ILParagraphElement;
+	add: #ILParameterElement;
+	add: #ILPlatform;
+	add: #ILPluggableWidget;
+	add: #ILPreElement;
+	add: #ILPrependDelegator;
+	add: #ILRadioButtonElement;
+	add: #ILRawHtmlElement;
+	add: #ILRedirectHandler;
+	add: #ILRequest;
+	add: #ILRequestHandler;
+	add: #ILResponse;
+	add: #ILResponseNotification;
+	add: #ILRoute;
+	add: #ILRouter;
+	add: #ILRubyTextElement;
+	add: #ILScriptElement;
+	add: #ILSelectElement;
+	add: #ILSequence;
+	add: #ILServerAdaptor;
+	add: #ILServerManager;
+	add: #ILSession;
+	add: #ILSessionManager;
+	add: #ILSpanElement;
+	add: #ILStateRegistry;
+	add: #ILStylesheetsDirectory;
+	add: #ILTableBodyElement;
+	add: #ILTableCellElement;
+	add: #ILTableDataElement;
+	add: #ILTableElement;
+	add: #ILTableElementElement;
+	add: #ILTableFootElement;
+	add: #ILTableHeadElement;
+	add: #ILTableHeaderElement;
+	add: #ILTableRowElement;
+	add: #ILTempFile;
+	add: #ILTextAreaElement;
+	add: #ILTextElement;
+	add: #ILTitleElement;
+	add: #ILUrl;
+	add: #ILUrlBuilder;
+	add: #ILWidget;
+	add: #ILXmlElement;
+	yourself.
+
+package methodNames
+	add: #BlockClosure -> #buildOn:;
+	add: #BlockClosure -> #fixActionTemps;
+	add: #Collection -> #printJsonOn:;
+	add: #Dictionary -> #printJsonOn:;
+	add: #Number -> #printJsonOn:;
+	add: #Object -> #asResponse;
+	add: #Object -> #buildOn:;
+	add: #Object -> #printEncodedOn:;
+	add: #Object -> #printHtmlOn:;
+	add: #Object -> #respondOn:;
+	add: #Stream -> #respondOn:;
+	add: #String -> #isBinaryResponse;
+	add: #String -> #printJsonOn:;
+	add: #Text -> #printJsonOn:;
+	add: #UndefinedObject -> #printJsonOn:;
+	add: #ZnMimeType -> #isBinaryResponse;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Core\Contributions\IDB\IDB DateAndTime';
+	add: '..\Core\Contributions\IDB\IDB Duration';
+	add: 'Iliad-Dolphin-Portability';
+	add: '..\Portishead\Portishead-Core';
+	add: '..\Portishead\Portishead-File System';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+Object subclass: #ILCookie
+	instanceVariableNames: 'expiry key path value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILEncoder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILFileProxy
+	instanceVariableNames: 'filename contentType contents timestamps fileName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILModelProxy
+	instanceVariableNames: 'cache model'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILPlatform
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'current'!
+Object subclass: #ILRequest
+	instanceVariableNames: 'url fields headers cookies method nativeRequest'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILResponse
+	instanceVariableNames: 'contentType headers cookies status stream'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILServerAdaptor
+	instanceVariableNames: 'manager port requestHandler codec'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILServerManager
+	instanceVariableNames: 'adaptors'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'default'!
+Object subclass: #ILTempFile
+	instanceVariableNames: 'contentType fileName fileSize tempFileName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILUrl
+	instanceVariableNames: 'scheme username password hostname port path parameters fragment'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRError subclass: #ILAttributeError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRError subclass: #ILAttributeNotUnderstood
+	instanceVariableNames: 'element attribute'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRError subclass: #ILDispatchError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRError subclass: #ILElementError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRError subclass: #ILJsonSyntaxError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Notification subclass: #ILResponseNotification
+	instanceVariableNames: 'response'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRNotification subclass: #ILDynamicVariable
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDynamicVariable subclass: #ILCurrentBuildable
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDynamicVariable subclass: #ILCurrentContext
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRObject subclass: #ILObject
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILAction
+	instanceVariableNames: 'key block value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILActionRegistry
+	instanceVariableNames: 'actions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILBuildable
+	instanceVariableNames: 'attributes children'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILComposite
+	instanceVariableNames: 'tail next'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILContext
+	instanceVariableNames: 'request router session urlBuilder previousStateRegistry stateRegistry builtWidgets attributes'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILDirectory
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILDispatcher
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'current'!
+ILObject subclass: #ILJson
+	instanceVariableNames: 'stream ctorMap'
+	classVariableNames: 'CharacterEscapeMap'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILJsonObject
+	instanceVariableNames: 'properties'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILRequestHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILRoute
+	instanceVariableNames: 'path stream position'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILRouter
+	instanceVariableNames: 'route hashRoute application controller'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILSession
+	instanceVariableNames: 'id preferences others timestamps expired redirectUrl applications actionRegistry stateRegistries nextId'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILSessionManager
+	instanceVariableNames: 'sessions preferences expirationProcess'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'current'!
+ILObject subclass: #ILStateRegistry
+	instanceVariableNames: 'key states'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILObject subclass: #ILUrlBuilder
+	instanceVariableNames: 'baseUrl'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'actionKey hashKey sessionKey ajaxUploadKey stateKey rewriteRules jsonKey'!
+ILBuildable subclass: #ILDecorator
+	instanceVariableNames: 'decoratee'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILBuildable subclass: #ILHTMLPage
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILBuildable subclass: #ILWidget
+	instanceVariableNames: 'id state decorator owner dependentWidgets'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDecorator subclass: #ILAnswerHandler
+	instanceVariableNames: 'action'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDecorator subclass: #ILDelegator
+	instanceVariableNames: 'widget'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDelegator subclass: #ILAppendDelegator
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDelegator subclass: #ILPrependDelegator
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILApplication
+	instanceVariableNames: 'model page'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'selectorFilter'!
+ILWidget subclass: #ILConfirmationWidget
+	instanceVariableNames: 'confirmationString'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILInformationWidget
+	instanceVariableNames: 'informationString'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILInPlaceWidget
+	instanceVariableNames: 'contents contentsBlock inPlaceBlock inPlaceWidget inPlaceInput'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILPluggableWidget
+	instanceVariableNames: 'contentsBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILSequence
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILComposite subclass: #ILElement
+	instanceVariableNames: 'attributes'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILElement subclass: #ILHTMLBuilderElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILElement subclass: #ILRawHtmlElement
+	instanceVariableNames: 'contents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILElement subclass: #ILTextElement
+	instanceVariableNames: 'contents tag'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILElement subclass: #ILXmlElement
+	instanceVariableNames: 'tag'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILBodyElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILCaptionElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILClosingElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILConditionalCommentElement
+	instanceVariableNames: 'conditions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILDirectionElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILDivElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILFieldsetElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILFormElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILFormElementElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILHeadElement
+	instanceVariableNames: 'title'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILHeadingElement
+	instanceVariableNames: 'level'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILHtmlElement
+	instanceVariableNames: 'doctype xmlTag'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILLabelElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILLegendElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILLinkableElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILListElement
+	instanceVariableNames: 'tag'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILListItemElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILMapElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILObjectElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILOptionElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILOptionGroupElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILParagraphElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILPreElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILRubyTextElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILScriptElement
+	instanceVariableNames: 'contents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILSpanElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILTableElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILTableElementElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILTitleElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILClosingElement subclass: #ILAreaElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILClosingElement subclass: #ILBreakElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILClosingElement subclass: #ILHorizontalRuleElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILClosingElement subclass: #ILImageElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILClosingElement subclass: #ILMetaElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILClosingElement subclass: #ILParameterElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILFormElementElement subclass: #ILButtonElement
+	instanceVariableNames: 'hiddenAction'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILFormElementElement subclass: #ILCheckboxElement
+	instanceVariableNames: 'value hiddenAction'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILFormElementElement subclass: #ILInputElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILFormElementElement subclass: #ILSelectElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILFormElementElement subclass: #ILTextAreaElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILInputElement subclass: #ILRadioButtonElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILLinkableElement subclass: #ILAnchorElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'useAjaxOnlyForActions'!
+ILLinkableElement subclass: #ILLinkElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILTableElementElement subclass: #ILTableBodyElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILTableElementElement subclass: #ILTableCellElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILTableElementElement subclass: #ILTableFootElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILTableElementElement subclass: #ILTableHeadElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILTableCellElement subclass: #ILTableDataElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILTableCellElement subclass: #ILTableHeaderElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILTableCellElement subclass: #ILTableRowElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDirectory subclass: #ILFileDirectory
+	instanceVariableNames: 'directory path'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDirectory subclass: #ILMemoryDirectory
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILMemoryDirectory subclass: #ILImagesDirectory
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILMemoryDirectory subclass: #ILJavascriptsDirectory
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILMemoryDirectory subclass: #ILStylesheetsDirectory
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRequestHandler subclass: #ILApplicationHandler
+	instanceVariableNames: 'actions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRequestHandler subclass: #ILErrorHandler
+	instanceVariableNames: 'error'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'mode'!
+ILRequestHandler subclass: #ILFileHandler
+	instanceVariableNames: 'file'
+	classVariableNames: 'BaseDirectories Directories MimeTypes'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRequestHandler subclass: #ILJsonHandler
+	instanceVariableNames: 'jsonContents widgets scripts head'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRequestHandler subclass: #ILNotFoundHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRequestHandler subclass: #ILRedirectHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!BlockClosure methodsFor!
+
+buildOn: anElement	self value: anElement!
+
+fixActionTemps! !
+!BlockClosure categoriesFor: #buildOn:!*Iliad/Core!public! !
+!BlockClosure categoriesFor: #fixActionTemps!*Iliad/Core!public! !
+
+!Collection methodsFor!
+
+printJsonOn: aStream	| needComma |	needComma := false.	aStream nextPut: $[.	self do: [:v |		needComma			ifTrue: [ aStream nextPutAll: ', ' ]			ifFalse: [ needComma := true ].		v printJsonOn: aStream.	].	aStream nextPut: $].! !
+!Collection categoriesFor: #printJsonOn:!*Iliad/Core/lib/JSON/printing!public! !
+
+!Dictionary methodsFor!
+
+printJsonOn: aStream	| needComma |	needComma := false.	aStream nextPut: ${.	self keysAndValuesDo: [:k :v |		needComma			ifTrue: [ aStream nextPutAll: ', ' ]			ifFalse: [ needComma := true ].		k asString printJsonOn: aStream.		aStream nextPutAll: ': '.		v printJsonOn: aStream.	].	aStream nextPut: $}.! !
+!Dictionary categoriesFor: #printJsonOn:!*Iliad/Core/lib/JSON/printing!public! !
+
+!Number methodsFor!
+
+printJsonOn: aWriteStream 	aWriteStream nextPutAll: self greaseString.! !
+!Number categoriesFor: #printJsonOn:!*Iliad/Core/lib/JSON/printing!public! !
+
+!Object methodsFor!
+
+asResponse	| response |	response := ILResponse ok.	self respondOn: response.	^response!
+
+buildOn: anObject	anObject text: self!
+
+printEncodedOn: aStream	^ILEncoder encodeForHTTP: self greaseString on: aStream !
+
+printHtmlOn: aStream	self printOn: aStream!
+
+respondOn: aResponse	self printOn: aResponse! !
+!Object categoriesFor: #asResponse!*Iliad/Core!public! !
+!Object categoriesFor: #buildOn:!*Iliad/Core!public! !
+!Object categoriesFor: #printEncodedOn:!*Iliad/Core!public! !
+!Object categoriesFor: #printHtmlOn:!*Iliad/Core!public! !
+!Object categoriesFor: #respondOn:!*Iliad/Core!public! !
+
+!Stream methodsFor!
+
+respondOn: aResponse	self contents respondOn: aResponse! !
+!Stream categoriesFor: #respondOn:!*Iliad/Core!public! !
+
+!String methodsFor!
+
+isBinaryResponse	| tokens type subTypes |	tokens := self findTokens: '/'.	type := tokens first.	type = 'text' ifTrue: [ ^ false].	tokens size = 1 ifTrue: [ ^ true].	subTypes := tokens second findTokens: '+'.	^ subTypes noneSatisfy: [ : each | #('x-javascript' 'xml' 'json') includes: each]!
+
+printJsonOn: aStream	| replacement |	aStream nextPut: $".	self do: [:ch |		replacement := ILJson escapeForCharacter: ch.		replacement			ifNil: [ aStream nextPut: ch ]			ifNotNil: [ aStream nextPut: $\; nextPut: replacement ].	].	aStream nextPut: $".! !
+!String categoriesFor: #isBinaryResponse!*Iliad/Core!public! !
+!String categoriesFor: #printJsonOn:!*Iliad/Core/lib/JSON/printing!public! !
+
+!Text methodsFor!
+
+printJsonOn: aStream	self string printJsonOn: aStream! !
+!Text categoriesFor: #printJsonOn:!*Iliad/Core/lib/JSON/printing!public! !
+
+!UndefinedObject methodsFor!
+
+printJsonOn: aWriteStream 	aWriteStream nextPutAll: 'null'! !
+!UndefinedObject categoriesFor: #printJsonOn:!*Iliad/Core/lib/JSON/printing!public! !
+
+!ZnMimeType methodsFor!
+
+isBinaryResponse
+
+	| type subTypes |
+
+	type := self main.
+	type = 'text' ifTrue: [ ^ false].
+	(self sub isNil or: [ self sub isEmpty ]) ifTrue: [ ^ true].
+	subTypes := self sub findTokens: '+'.
+	^ subTypes noneSatisfy: [ : each | #('x-javascript' 'xml' 'json') includes: each ]
+! !
+!ZnMimeType categoriesFor: #isBinaryResponse!public! !
+
+"End of package definition"!
+

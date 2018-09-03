@@ -1,0 +1,99 @@
+﻿| package |
+package := Package name: 'Iliad-More-Comet'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILCometConnectionWidget;
+	add: #ILCometEvent;
+	add: #ILCometHandler;
+	add: #ILCometSubscription;
+	yourself.
+
+package methodNames
+	add: #ILApplication -> #cometConnection;
+	add: #ILSession -> #cometHandler;
+	add: #ILWidget -> #handleCometEvent:;
+	add: #ILWidget -> #pushOnCometEvent:;
+	add: #ILWidget -> #pushOnCometEvent:condition:;
+	add: #ILWidget -> #subscribeToCometEvent:;
+	add: #ILWidget -> #triggerCometEvent:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Iliad-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+ILObject subclass: #ILCometHandler
+	instanceVariableNames: 'session subscriptions semaphores shouldPush'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'pingProcess'!
+ILObject subclass: #ILCometSubscription
+	instanceVariableNames: 'handler widget eventClass condition'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILCometConnectionWidget
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILCometEvent
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!ILApplication methodsFor!
+
+cometConnection	^self		attributeAt: #cometConnection 		ifAbsentPut: [ILCometConnectionWidget new]! !
+!ILApplication categoriesFor: #cometConnection!*Iliad/More/Comet!public! !
+
+!ILSession methodsFor!
+
+cometHandler	^self otherAt: #cometHandler ifAbsentPut: [ILCometHandler on: self]! !
+!ILSession categoriesFor: #cometHandler!*Iliad/More/Comet!public! !
+
+!ILWidget methodsFor!
+
+handleCometEvent: anEvent	self markDirty!
+
+pushOnCometEvent: anEventClass	"Register the receiver to push its contents to the client when the event <anEvent> occurs."		self pushOnCometEvent: anEventClass condition: [:event | true]!
+
+pushOnCometEvent: anEventClass condition: aBlock	"Register the receiver to push its contents to the client when the event <anEvent> occurs."		self session cometHandler		subscribe: self		to: anEventClass		condition: aBlock!
+
+subscribeToCometEvent: anEventClass	"Register the receiver to push its contents to the client when the event <anEvent> occurs."		self session cometHandler		subscribe: self		to: anEventClass!
+
+triggerCometEvent: anEvent	"Update all widgets which registered to the event <anEvent>"	self session cometHandler triggerEvent: anEvent! !
+!ILWidget categoriesFor: #handleCometEvent:!*Iliad/More/Comet!public! !
+!ILWidget categoriesFor: #pushOnCometEvent:!*Iliad/More/Comet!public! !
+!ILWidget categoriesFor: #pushOnCometEvent:condition:!*Iliad/More/Comet!public! !
+!ILWidget categoriesFor: #subscribeToCometEvent:!*Iliad/More/Comet!public! !
+!ILWidget categoriesFor: #triggerCometEvent:!*Iliad/More/Comet!public! !
+
+"End of package definition"!
+

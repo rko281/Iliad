@@ -1,0 +1,215 @@
+﻿| package |
+package := Package name: 'Iliad-More-Formula'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILAlphanumericCondition;
+	add: #ILAutocompleteInputField;
+	add: #ILCheckboxField;
+	add: #ILCondition;
+	add: #ILDateInputField;
+	add: #ILEmailAddressCondition;
+	add: #ILField;
+	add: #ILFieldContainer;
+	add: #ILFileInputField;
+	add: #ILFormula;
+	add: #ILInputField;
+	add: #ILLengthCondition;
+	add: #ILMaximumLengthCondition;
+	add: #ILMinimumLengthCondition;
+	add: #ILMultipleCheckboxField;
+	add: #ILMultipleCondition;
+	add: #ILNotEmptyCondition;
+	add: #ILNumberInputField;
+	add: #ILNumericCondition;
+	add: #ILOptionField;
+	add: #ILPasswordField;
+	add: #ILPluggableCondition;
+	add: #ILRadioButtonField;
+	add: #ILRepeatedPasswordField;
+	add: #ILSelectField;
+	add: #ILSingleCondition;
+	add: #ILTextareaField;
+	add: #ILTimeInputField;
+	yourself.
+
+package methodNames
+	add: #BlockClosure -> #asFormulaCondition;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: 'Iliad-Core';
+	add: 'Iliad-Dolphin-Portability';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+Object subclass: #ILCondition
+	instanceVariableNames: 'labelBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILBuildable subclass: #ILField
+	instanceVariableNames: 'formula conditions errors customRows reader writer labelContents commentContents id'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILAutocompleteInputField
+	instanceVariableNames: 'options fieldId'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILCheckboxField
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILDateInputField
+	instanceVariableNames: 'yearsInterval'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILFileInputField
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILInputField
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILOptionField
+	instanceVariableNames: 'options optionLabelBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILPasswordField
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILRadioButtonField
+	instanceVariableNames: 'groupName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILRepeatedPasswordField
+	instanceVariableNames: 'repeatedValue repeatLabelContents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILTextareaField
+	instanceVariableNames: 'size'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILField subclass: #ILTimeInputField
+	instanceVariableNames: 'hours minutes seconds'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILInputField subclass: #ILNumberInputField
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILOptionField subclass: #ILMultipleCheckboxField
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILOptionField subclass: #ILSelectField
+	instanceVariableNames: 'multiple'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILFieldContainer
+	instanceVariableNames: 'fields label formula'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILFormula
+	instanceVariableNames: 'proxy conditions containers formulas buttons saveAction cancelAction errors multipart subFormula cssClass'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCondition subclass: #ILAlphanumericCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCondition subclass: #ILEmailAddressCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCondition subclass: #ILLengthCondition
+	instanceVariableNames: 'length'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCondition subclass: #ILMultipleCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCondition subclass: #ILNotEmptyCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCondition subclass: #ILNumericCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCondition subclass: #ILPluggableCondition
+	instanceVariableNames: 'conditionBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILCondition subclass: #ILSingleCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILLengthCondition subclass: #ILMaximumLengthCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILLengthCondition subclass: #ILMinimumLengthCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!BlockClosure methodsFor!
+
+asFormulaCondition	^ILPluggableCondition new		conditionBlock: self;		yourself! !
+!BlockClosure categoriesFor: #asFormulaCondition!*Iliad/More/Formula!public! !
+
+"End of package definition"!
+

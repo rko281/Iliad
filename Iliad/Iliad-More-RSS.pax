@@ -1,0 +1,105 @@
+﻿| package |
+package := Package name: 'Iliad-More-RSS'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILRSSCategoryElement;
+	add: #ILRSSCloudElement;
+	add: #ILRSSCommentsElement;
+	add: #ILRSSDescriptionElement;
+	add: #ILRSSElement;
+	add: #ILRSSEnclosureElement;
+	add: #ILRSSGuidElement;
+	add: #ILRSSMock;
+	add: #ILRSSMockApplication;
+	add: #ILRSSRssElement;
+	add: #ILRSSSourceElement;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Iliad-Core';
+	add: 'Iliad-More-Examples';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+ILBuildable subclass: #ILRSSMock
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILApplication subclass: #ILRSSMockApplication
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILRSSElement
+	instanceVariableNames: 'tag'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRSSElement subclass: #ILRSSCategoryElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRSSElement subclass: #ILRSSCloudElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRSSElement subclass: #ILRSSCommentsElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRSSElement subclass: #ILRSSDescriptionElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRSSElement subclass: #ILRSSEnclosureElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRSSElement subclass: #ILRSSGuidElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRSSElement subclass: #ILRSSRssElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILRSSElement subclass: #ILRSSSourceElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+

@@ -1,0 +1,84 @@
+﻿| package |
+package := Package name: 'Iliad-Dolphin-Core'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILDolphinPlatform;
+	yourself.
+
+package methodNames
+	add: #Class -> #indexOfInstVar:ifAbsent:;
+	add: 'ILFileProxy class' -> #new;
+	add: 'ILRequest class' -> #new;
+	add: 'ILResponse class' -> #new;
+	add: 'ILServerManager class' -> #new;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: 'Iliad-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+ILPlatform subclass: #ILDolphinPlatform
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!Class methodsFor!
+
+indexOfInstVar: aString ifAbsent: aNiladicValuable
+
+	"Here since Iliad does this but sometimes (in SUnits at least) passes Symbols instead of Strings"
+
+	^super indexOfInstVar: aString asString ifAbsent: aNiladicValuable! !
+!Class categoriesFor: #indexOfInstVar:ifAbsent:!accessing!public! !
+
+!ILFileProxy class methodsFor!
+
+new
+	^super new initialize! !
+!ILFileProxy class categoriesFor: #new!public! !
+
+!ILRequest class methodsFor!
+
+new
+	^super new initialize! !
+!ILRequest class categoriesFor: #new!public! !
+
+!ILResponse class methodsFor!
+
+new
+	^super new initialize! !
+!ILResponse class categoriesFor: #new!public! !
+
+!ILServerManager class methodsFor!
+
+new
+	^super new initialize! !
+!ILServerManager class categoriesFor: #new!public! !
+
+"End of package definition"!
+

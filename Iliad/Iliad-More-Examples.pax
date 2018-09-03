@@ -1,0 +1,129 @@
+﻿| package |
+package := Package name: 'Iliad-More-Examples'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILAbstractSelectorApplication;
+	add: #ILClassSearchApplication;
+	add: #ILClassSearchWidget;
+	add: #ILCounter;
+	add: #ILCounterApplication;
+	add: #ILFileBrowserApplication;
+	add: #ILFileMultipleSelectorApplication;
+	add: #ILFileSelectorApplication;
+	add: #ILFileUploadApplication;
+	add: #ILHtml5ApplicationExample;
+	add: #ILInPlaceApplication;
+	add: #ILTodoListApplication;
+	add: #ILTodoListGridWidget;
+	add: #ILTodoListItem;
+	add: #ILTodoListItemRepository;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: 'Iliad-Core';
+	add: 'Iliad-More-Formula';
+	add: 'Iliad-More-UI';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+Object subclass: #ILTodoListItem
+	instanceVariableNames: 'deadline title body completed number'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #ILTodoListItemRepository
+	instanceVariableNames: 'items'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'default'!
+ILWidget subclass: #ILClassSearchWidget
+	instanceVariableNames: 'resultsWidget searchText selectedClass infoWidget selectedMessage codeWidget'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILCounter
+	instanceVariableNames: 'count'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILTodoListGridWidget
+	instanceVariableNames: 'selectBlock dataGrid'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILApplication subclass: #ILAbstractSelectorApplication
+	instanceVariableNames: 'widget'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILApplication subclass: #ILCounterApplication
+	instanceVariableNames: 'counters'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILApplication subclass: #ILFileUploadApplication
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILApplication subclass: #ILHtml5ApplicationExample
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILApplication subclass: #ILInPlaceApplication
+	instanceVariableNames: 'textForExample1 textForExample2 textForExample3 textForExample3b widgetForExample1 widgetForExample2'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILApplication subclass: #ILTodoListApplication
+	instanceVariableNames: 'todoListGridWidget'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILAbstractSelectorApplication subclass: #ILClassSearchApplication
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILAbstractSelectorApplication subclass: #ILFileBrowserApplication
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILAbstractSelectorApplication subclass: #ILFileMultipleSelectorApplication
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILAbstractSelectorApplication subclass: #ILFileSelectorApplication
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+

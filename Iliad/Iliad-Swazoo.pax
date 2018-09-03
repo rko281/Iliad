@@ -1,0 +1,63 @@
+﻿| package |
+package := Package name: 'Iliad-Swazoo'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILSite;
+	yourself.
+
+package methodNames
+	add: #HTTPPostDatum -> #fileName;
+	add: #HTTPPostDatum -> #saveToStream:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Iliad-Core';
+	add: '..\Sport\Sport';
+	add: '..\Swazoo\Swazoo';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+SwazooSite subclass: #ILSite
+	instanceVariableNames: 'codec'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!HTTPPostDatum methodsFor!
+
+fileName
+
+	^File splitFilenameFrom: self filename!
+
+saveToStream: aStream
+
+	aStream nextPutAll: self value! !
+!HTTPPostDatum categoriesFor: #fileName!public! !
+!HTTPPostDatum categoriesFor: #saveToStream:!public! !
+
+"End of package definition"!
+

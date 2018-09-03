@@ -1,0 +1,188 @@
+﻿| package |
+package := Package name: 'Iliad-More-UI'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILApplicationBrowser;
+	add: #ILCalendar;
+	add: #ILDataGrid;
+	add: #ILDataGridFooter;
+	add: #ILDataGridHeader;
+	add: #ILDataGridRow;
+	add: #ILDateSelector;
+	add: #ILFileBrowserListWidget;
+	add: #ILFileBrowserMultipleSelectorWidget;
+	add: #ILFileBrowserSearchableWidget;
+	add: #ILFileBrowserSelectorWidget;
+	add: #ILLightbox;
+	add: #ILMessageDecorator;
+	add: #ILPagedDataGrid;
+	add: #ILPagedDataGridFooter;
+	add: #ILPaginator;
+	add: #ILTimeSelector;
+	add: #ILTree;
+	add: #ILUIWidget;
+	add: #ILViewTabs;
+	add: #ILWidgetsPaginator;
+	add: #ILWidgetTabs;
+	yourself.
+
+package methodNames
+	add: #ILWidget -> #addMessage:;
+	add: #ILWidget -> #lightbox:;
+	add: #ILWidget -> #lightbox:onAnswer:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: 'Iliad-Core';
+	add: 'Iliad-Dolphin-Portability';
+	add: '..\Portishead\Portishead-File System';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+ILDecorator subclass: #ILMessageDecorator
+	instanceVariableNames: 'message'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDelegator subclass: #ILLightbox
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILUIWidget
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILWidget subclass: #ILWidgetsPaginator
+	instanceVariableNames: 'widgets currentPage widgetsPerPage beforeContentsBlock afterContentsBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILApplication subclass: #ILApplicationBrowser
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILCalendar
+	instanceVariableNames: 'month year actionBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILDataGrid
+	instanceVariableNames: 'items columnNames builders headerClass footerClass rowClass caption'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILDataGridFooter
+	instanceVariableNames: 'grid'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILDataGridHeader
+	instanceVariableNames: 'grid'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILDataGridRow
+	instanceVariableNames: 'grid item even'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILDateSelector
+	instanceVariableNames: 'actionBlock selectedMonth selectedDay selectedYear'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILFileBrowserListWidget
+	instanceVariableNames: 'selectedMessage selectedDirectory title displayFileStrategy rootDirectory'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILPaginator
+	instanceVariableNames: 'currentPage totalPages action'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILTimeSelector
+	instanceVariableNames: 'actionBlock selectedHours selectedMinutes showSeconds selectedSeconds'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILTree
+	instanceVariableNames: 'item expanded childrenBlock subTrees root contentsBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILViewTabs
+	instanceVariableNames: 'views labels classes selectedView'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILUIWidget subclass: #ILWidgetTabs
+	instanceVariableNames: 'contentsBlock labelBlock items selectedItem hashBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDataGrid subclass: #ILPagedDataGrid
+	instanceVariableNames: 'rowsPerPage currentPage'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILDataGridFooter subclass: #ILPagedDataGridFooter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILFileBrowserListWidget subclass: #ILFileBrowserMultipleSelectorWidget
+	instanceVariableNames: 'selections buttonsClass controlsContainerClass buttons'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILFileBrowserListWidget subclass: #ILFileBrowserSearchableWidget
+	instanceVariableNames: 'resultsWidget searchFilename infoWidget'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILFileBrowserListWidget subclass: #ILFileBrowserSelectorWidget
+	instanceVariableNames: 'selection'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!ILWidget methodsFor!
+
+addMessage: aBlock	self decorateWith: ((ILMessageDecorator decoratee: self) 		message: aBlock)!
+
+lightbox: aWidget	"show <aWidget> inside a lightbox"		self lightbox: aWidget onAnswer: [:ans | ]!
+
+lightbox: aWidget onAnswer: aBlock	"show <aWidget> inside a lightbox"		self 		show: aWidget 		onAnswer: aBlock		delegator: (ILLightbox new widget: aWidget; yourself)! !
+!ILWidget categoriesFor: #addMessage:!*Iliad/More/UI!public! !
+!ILWidget categoriesFor: #lightbox:!*Iliad/More/UI!public! !
+!ILWidget categoriesFor: #lightbox:onAnswer:!*Iliad/More/UI!public! !
+
+"End of package definition"!
+

@@ -1,0 +1,243 @@
+﻿| package |
+package := Package name: 'Iliad-More-HTML5Elements'.
+package paxVersion: 1;
+	basicComment: 'Iliad Web Framework
+https://iliadproject.github.io/
+
+Dolphin Smalltalk port
+Created August 2018
+https://github.com/rko281/Iliad'.
+
+
+package classNames
+	add: #ILAudioElement;
+	add: #ILCanvasElement;
+	add: #ILCommandElement;
+	add: #ILDatalistElement;
+	add: #ILDetailsElement;
+	add: #ILMenuElement;
+	add: #ILMeterElement;
+	add: #ILProgressElement;
+	add: #ILSearchInputElement;
+	add: #ILSourceElement;
+	add: #ILTimeElement;
+	add: #ILVideoElement;
+	yourself.
+
+package methodNames
+	add: #ILHTMLBuilderElement -> #audio;
+	add: #ILHTMLBuilderElement -> #canvas;
+	add: #ILHTMLBuilderElement -> #color;
+	add: #ILHTMLBuilderElement -> #command;
+	add: #ILHTMLBuilderElement -> #datalist;
+	add: #ILHTMLBuilderElement -> #date;
+	add: #ILHTMLBuilderElement -> #datetime;
+	add: #ILHTMLBuilderElement -> #datetimeLocal;
+	add: #ILHTMLBuilderElement -> #details;
+	add: #ILHTMLBuilderElement -> #email;
+	add: #ILHTMLBuilderElement -> #menu;
+	add: #ILHTMLBuilderElement -> #meter;
+	add: #ILHTMLBuilderElement -> #number;
+	add: #ILHTMLBuilderElement -> #progress;
+	add: #ILHTMLBuilderElement -> #range;
+	add: #ILHTMLBuilderElement -> #searchInput;
+	add: #ILHTMLBuilderElement -> #source;
+	add: #ILHTMLBuilderElement -> #time;
+	add: #ILHTMLBuilderElement -> #timeInput;
+	add: #ILHTMLBuilderElement -> #video;
+	add: #ILInputElement -> #beColor;
+	add: #ILInputElement -> #beDate;
+	add: #ILInputElement -> #beDatetime;
+	add: #ILInputElement -> #beDatetimeLocal;
+	add: #ILInputElement -> #beEmail;
+	add: #ILInputElement -> #beNumber;
+	add: #ILInputElement -> #beRange;
+	add: #ILInputElement -> #beTime;
+	add: #ILInputElement -> #list:;
+	add: #ILInputElement -> #max:;
+	add: #ILInputElement -> #min:;
+	add: #ILInputElement -> #step:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: 'Iliad-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+ILHTMLBuilderElement subclass: #ILAudioElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILCanvasElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILCommandElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILDatalistElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILDetailsElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILMenuElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILMeterElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILProgressElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILSourceElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILTimeElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILHTMLBuilderElement subclass: #ILVideoElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+ILInputElement subclass: #ILSearchInputElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!ILHTMLBuilderElement methodsFor!
+
+audio	^self add: ILAudioElement new!
+
+canvas	^self add: ILCanvasElement new!
+
+color	^self input		beColor;		yourself!
+
+command	^self add: ILCommandElement new!
+
+datalist	^self add: ILDatalistElement new!
+
+date	^self input		beDate;		yourself!
+
+datetime	^self input		beDatetime;		yourself!
+
+datetimeLocal	^self input		beDatetimeLocal;		yourself!
+
+details	^self add: ILDetailsElement new!
+
+email	^self input		beEmail;		yourself!
+
+menu	^self add: ILMenuElement new!
+
+meter	^self add: ILMeterElement new!
+
+number	^self input		beNumber;		yourself!
+
+progress	^self add: ILProgressElement new!
+
+range	^self input		beRange;		yourself!
+
+searchInput	^self add: ILSearchInputElement new!
+
+source	^self add: ILSourceElement new!
+
+time	^self add: ILTimeElement new!
+
+timeInput	^self input		beTime;		yourself!
+
+video	^self add: ILVideoElement new! !
+!ILHTMLBuilderElement categoriesFor: #audio!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #canvas!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #color!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #command!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #datalist!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #date!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #datetime!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #datetimeLocal!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #details!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #email!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #menu!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #meter!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #number!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #progress!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #range!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #searchInput!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #source!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #time!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #timeInput!*Iliad/More/HTML5Elements!public! !
+!ILHTMLBuilderElement categoriesFor: #video!*Iliad/More/HTML5Elements!public! !
+
+!ILInputElement methodsFor!
+
+beColor	self type: 'color'!
+
+beDate	self type: 'date'!
+
+beDatetime	self type: 'datetime'!
+
+beDatetimeLocal	self type: 'datetime-local'!
+
+beEmail	self type: 'email'!
+
+beNumber	self type: 'number'!
+
+beRange	self type: 'range'!
+
+beTime	self type: 'time'!
+
+list: aDatalistId	self attributeAt: 'list' put: aDatalistId.!
+
+max: anInteger	self attributeAt: 'max' put: anInteger greaseString !
+
+min: anInteger	self attributeAt: 'min' put: anInteger greaseString !
+
+step: anInteger	self attributeAt: 'step' put: anInteger greaseString ! !
+!ILInputElement categoriesFor: #beColor!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #beDate!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #beDatetime!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #beDatetimeLocal!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #beEmail!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #beNumber!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #beRange!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #beTime!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #list:!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #max:!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #min:!*Iliad/More/HTML5Elements!public! !
+!ILInputElement categoriesFor: #step:!*Iliad/More/HTML5Elements!public! !
+
+"End of package definition"!
+
