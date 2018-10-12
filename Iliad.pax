@@ -6,7 +6,7 @@ https://iliadproject.github.io/
 
 Dolphin Smalltalk port
 Created August 2018
-https://github.com/rko281/Iliad'
+https://github.com/rko281/Iliad'.
 
 package basicScriptAt: #postinstall put: '"Start the example server"
 ILSite newDefault.
