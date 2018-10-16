@@ -18,7 +18,7 @@ Port for Dolphin Smalltalk 7.1 created August 2018
 ### Manual Installation
 * This repository should be cloned/downloaded to your Dolphin working directory
 * Also download the following repositories:
-* [Grease](https://github.com/rko281/Grease)
-* [Portishead](https://github.com/rko281/Portishead)
-* [Swazoo](https://github.com/rko281/Swazoo)
+  * [Grease](https://github.com/rko281/Grease)
+  * [Portishead](https://github.com/rko281/Portishead)
+  * [Swazoo](https://github.com/rko281/Swazoo)
 * Install package `Iliad` - this will load all required prerequisites and start the Welcome server
