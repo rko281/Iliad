@@ -20,8 +20,7 @@ findSessionFor: aRequest	^ILSessionManager current 		sessionFor: aRequest!
 
 withDispatchErrorHandling: aBlock	"Catch dispatch errors"		aBlock 		on: ILDispatchError		do: [:error | ILFileHandler new 			handleRequest]!
 
-withErrorHandling: aBlock	"Catch errors and use an ILErrorHandler to handle them"		aBlock		on: Error		do: [:error |
-self halt.			ILErrorHandler new				error: error; 				handleRequest]! !
+withErrorHandling: aBlock	"Catch errors and use an ILErrorHandler to handle them"		aBlock		on: Error		do: [:error |			ILErrorHandler new				error: error; 				handleRequest]! !
 !ILDispatcher categoriesFor: #createContextFor:!private! !
 !ILDispatcher categoriesFor: #dispatch:!dispatching!public! !
 !ILDispatcher categoriesFor: #dispatchRequest:!dispatching!public! !

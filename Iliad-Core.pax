@@ -160,8 +160,12 @@ package setPrerequisites: (IdentitySet new
 	add: '..\Core\Contributions\IDB\IDB Duration';
 	add: 'Iliad-Dolphin-Portability';
 	add: '..\Portishead\Portishead-Core';
+	add: '..\Portishead\Portishead-Development';
 	add: '..\Portishead\Portishead-File System';
 	yourself).
+
+package setManualPrerequisites: #(
+	'Portishead-Development').
 
 package!
 
